@@ -1,0 +1,67 @@
+{
+	"Logging": {
+		"IncludeScopes": false,
+		"LogLevel": {
+			"Default": "Trace",
+			"Microsoft": "Information",
+			"Microsoft.Hosting.Lifetime": "Information",
+			"Microsoft.EntityFrameworkCore.Database.Command": "Warning",
+			"Quartz": "Warning"
+		}
+	},
+	"AppIdentity": {
+		"User": {
+			"RequireUniqueEmail": true
+		},
+		"Password": {
+			"RequiredLength": 5,
+			"RequireLowercase": false,
+			"RequireUppercase": false,
+			"RequireDigit": true,
+			"RequireNonAlphanumeric": true
+		},
+		"Lockout": {
+			"AllowedForNewUsers": true,
+			"DefaultLockoutTimeSpanInMins": 30,
+			"MaxFailedAccessAttempts": 5
+		},
+		"Jwt": {
+			"Issuer": "issuer",
+			"Audience": "audience",
+			"Authority": "http://localhost:51020",
+			"Key": "secret",
+			"ExpireMinutes": 60,
+
+			"InternalIdentifier": "public_api",
+			"ClientID": "api",
+			"ProviderID": "api-provider",
+			"ProviderSecret": "secret",
+			"Realm": "api-realm"
+		},
+		"AuthPaths": {
+			"Login": "/token",
+			"Logout": "/logout",
+			"NTLM": "/ntlm",
+			"Refresh": "/ntoken"
+		},
+		"AD": {
+			"UseADLoginFirst": false,
+			"MatchUserNTLM": false,
+			"UseLocalPrincipalNotLDAP": false,
+			"UseGenericLDAP": false,
+			"OrganizationalUnit": "",
+			"DC": [],
+			"LDAPCommonName": "",
+			"LDAPLoginDomain": "",
+			"LDAPLoginUser": "",
+			"LDAPLoginPassword": "",
+			"LDAPServer": "",
+			"LDAPPort": 389,
+			"LDAPSecurePort": 636,
+			"LDAPSecure": false,
+			"FallbackToDatabaseOnFailure": true,
+			"GroupForceCascade": true,
+			"GroupForceViewerMinimum":  false
+		}
+	}
+}
